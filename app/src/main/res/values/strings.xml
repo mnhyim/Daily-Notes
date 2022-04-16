@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DailyNotes</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_list">List</string>
+    <string name="title_calendar">Calendar</string>
+</resources>
