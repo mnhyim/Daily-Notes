@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DailyNotes</string>
+    <string name="app_name">Daily Notes</string>
 
     <string name="title_home">Home</string>
     <string name="title_list">List</string>
