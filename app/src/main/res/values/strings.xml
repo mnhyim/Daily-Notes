@@ -6,4 +6,7 @@
     <string name="title_calendar">Calendar</string>
 
     <string name="add_notes">Add new notes</string>
+    <string name="submit_prompt">Submit</string>
+    <string name="cancel_prompt">Cancel</string>
+
 </resources>
