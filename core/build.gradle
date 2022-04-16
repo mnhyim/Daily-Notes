@@ -34,4 +34,6 @@ android {
 dependencies {
 
     // Core module dependencies
+    // Room
+    implementation "androidx.room:room-runtime:$room_version"
 }
