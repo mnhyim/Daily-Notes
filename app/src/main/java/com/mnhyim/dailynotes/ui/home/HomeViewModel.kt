@@ -12,6 +12,7 @@ class HomeViewModel(private val useCase: NoteUseCase): ViewModel() {
 
     private val TAG: String = HomeViewModel::class.java.simpleName.toString()
 
+    val notes = useCase.getAllNotes().asLiveData()
     val totalNotes = useCase.countTotalNotes().asLiveData()
     private val sdf = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
     val upcomingNotes = useCase.countFutureNotes((sdf.parse(sdf.format(Calendar.getInstance().time)) as Date).time).asLiveData()
