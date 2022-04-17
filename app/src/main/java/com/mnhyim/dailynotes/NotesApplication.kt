@@ -2,6 +2,9 @@ package com.mnhyim.dailynotes
 
 import android.app.Application
 import com.mnhyim.core.di.databaseModule
+import com.mnhyim.core.di.repositoryModule
+import com.mnhyim.dailynotes.di.useCaseModule
+import com.mnhyim.dailynotes.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -15,7 +18,10 @@ class NotesApplication: Application() {
             androidContext(this@NotesApplication)
             modules(
                 listOf(
-                    databaseModule
+                    databaseModule,
+                    repositoryModule,
+                    useCaseModule,
+                    viewModelModule
                 )
             )
         }
