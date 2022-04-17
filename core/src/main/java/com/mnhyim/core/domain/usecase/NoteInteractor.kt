@@ -20,7 +20,7 @@ class NoteInteractor(
         return noteRepository.getAllNotes()
     }
 
-    override fun getDaysNotes(date: String): Flow<List<Note>> {
+    override fun getDaysNotes(date: Long): Flow<List<Note>> {
         return noteRepository.getDaysNotes(date)
     }
 

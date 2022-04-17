@@ -33,7 +33,7 @@ class AddNoteDialog : DialogFragment() {
         return AlertDialog.Builder(context)
             .setView(binding.root)
             .setPositiveButton(R.string.prompt_submit) { _, _ ->
-                Log.d(TAG, "positiveButton")
+                Log.d(TAG, "positiveButton ${convertToMilliseconds(binding.tieDate.text.toString())}")
                 lifecycleScope.launch {
                     viewModel.insertNote(
                         Note(
@@ -70,8 +70,9 @@ class AddNoteDialog : DialogFragment() {
         val c = Calendar.getInstance()
         DatePickerDialog(
             requireContext(),
-            { _, year, monthOfYear, dayOfMonth ->
-                binding.tieDate.setText("$dayOfMonth-$monthOfYear-$year")
+            { a, year, monthOfYear, dayOfMonth ->
+                val x = "${a.dayOfMonth}-${monthOfYear+1}-${a.year}"
+                binding.tieDate.setText(x)
             },
             c.get(Calendar.YEAR),
             c.get(Calendar.MONTH),

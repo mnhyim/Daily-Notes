@@ -23,7 +23,7 @@ class NoteDataSource(private val dao: NoteDao) {
         return dao.getAllNotes()
     }
 
-    fun getDaysNotes(date: String): Flow<List<NoteEntity>> {
+    fun getDaysNotes(date: Long): Flow<List<NoteEntity>> {
         return dao.getDaysNotes(date)
     }
 

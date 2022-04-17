@@ -1,5 +1,7 @@
 package com.mnhyim.dailynotes.ui.list
 
+import android.nfc.Tag
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -41,12 +43,17 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
 
     fun setNotes(notes: List<Note>?) {
         if (notes == null) {
+            Log.d("ListAdapter", "notes=null")
             this.listNotes.clear()
             notifyDataSetChanged()
+            Log.d("ListAdapter", "$listNotes")
         } else {
+            Log.d("ListAdapter", "notes!=null")
             this.listNotes.clear()
             this.listNotes.addAll(notes)
             notifyDataSetChanged()
+            Log.d("ListAdapter", "$listNotes")
+
         }
     }
 }
