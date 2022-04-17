@@ -21,4 +21,10 @@ interface NoteDao {
 
     @Query("SELECT * FROM notes WHERE date = :date")
     fun getDaysNotes(date: String): Flow<List<NoteEntity>>
+
+    @Query("SELECT COUNT(*) FROM notes")
+    fun countTotalNotes(): Flow<Int>
+
+    @Query("SELECT COUNT(*) FROM notes WHERE date > :inputDate")
+    fun countFutureNotes(inputDate: Long): Flow<Int>
 }

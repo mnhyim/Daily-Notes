@@ -1,5 +1,6 @@
 package com.mnhyim.core.data
 
+import androidx.room.Query
 import com.mnhyim.core.data.entity.NoteEntity
 import com.mnhyim.core.data.room.NoteDao
 import kotlinx.coroutines.flow.Flow
@@ -24,5 +25,13 @@ class NoteDataSource(private val dao: NoteDao) {
 
     fun getDaysNotes(date: String): Flow<List<NoteEntity>> {
         return dao.getDaysNotes(date)
+    }
+
+    fun countTotalNotes(): Flow<Int> {
+        return dao.countTotalNotes()
+    }
+
+    fun countFutureNotes(inputDate: Long): Flow<Int> {
+        return dao.countFutureNotes(inputDate)
     }
 }

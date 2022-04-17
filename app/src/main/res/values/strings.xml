@@ -13,6 +13,8 @@
     <string name="cancel_prompt">Cancel</string>
     <string name="prompt_submit">Submit</string>
     <string name="prompt_cancel">Cancel</string>
+    <string name="home_total">Total</string>
+    <string name="home_upcoming">Upcoming</string>
 
 
 </resources>

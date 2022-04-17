@@ -23,4 +23,12 @@ class NoteInteractor(
     override fun getDaysNotes(date: String): Flow<List<Note>> {
         return noteRepository.getDaysNotes(date)
     }
+
+    override fun countTotalNotes(): Flow<Int> {
+        return noteRepository.countTotalNotes()
+    }
+
+    override fun countFutureNotes(inputDate: Long): Flow<Int> {
+        return noteRepository.countFutureNotes(inputDate)
+    }
 }

@@ -23,4 +23,12 @@ class NoteRepository(private val dataSource: NoteDataSource) : NoteRepositoryInt
     override fun getDaysNotes(date: String): Flow<List<Note>> {
         return dataSource.getDaysNotes(date).map { DataMapper.mapEntityToDomain(it) }
     }
+
+    override fun countTotalNotes(): Flow<Int> {
+        return dataSource.countTotalNotes()
+    }
+
+    override fun countFutureNotes(inputDate: Long): Flow<Int> {
+        return dataSource.countFutureNotes(inputDate)
+    }
 }

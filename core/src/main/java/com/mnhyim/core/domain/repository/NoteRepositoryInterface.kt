@@ -9,4 +9,6 @@ interface NoteRepositoryInterface {
     fun deleteNote(note: Note)
     fun getAllNotes(): Flow<List<Note>>
     fun getDaysNotes(date: String): Flow<List<Note>>
+    fun countTotalNotes(): Flow<Int>
+    fun countFutureNotes(inputDate: Long): Flow<Int>
 }
